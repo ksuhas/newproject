@@ -19,7 +19,6 @@ public class  Parent {
 
   public static final String CMP_NAME = "VR";
 
-  @Override
   public abstract String getName();  
   
   }
