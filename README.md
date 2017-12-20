@@ -1,42 +1,27 @@
 ---
-id: native-components-android
-title: Native UI Components
+id: Ganesh 
+title: GitHiub Repository Test
 ---
 
-There are tons of native UI widgets out there ready to be used in the latest apps - some of them are part of the platform, others are available as third-party libraries, and still more might be in use in your very own portfolio. React Native has several of the most critical platform components already wrapped, like `ScrollView` and `TextInput`, but not all of them, and certainly not ones you might have written yourself for a previous app. Fortunately, it's quite easy to wrap up these existing components for seamless integration with your React Native application.
+Github .................
+## example
 
-Like the native module guide, this too is a more advanced guide that assumes you are somewhat familiar with Android SDK programming. This guide will show you how to build a native UI component, walking you through the implementation of a subset of the existing `ImageView` component available in the core React Native library.
+For this example we are going to walk through the  simple Java example. 
+ 
+## 1. Create the `Child` class
 
-## ImageView example
-
-For this example we are going to walk through the implementation requirements to allow the use of ImageViews in JavaScript.
-
-Native views are created and manipulated by extending `ViewManager` or more commonly `SimpleViewManager` . A `SimpleViewManager` is convenient in this case because it applies common properties such as background color, opacity, and Flexbox layout.
-
-These subclasses are essentially singletons - only one instance of each is created by the bridge. They vend native views to the `NativeViewHierarchyManager`, which delegates back to them to set and update the properties of the views as necessary. The `ViewManagers` are also typically the delegates for the views, sending events back to JavaScript via the bridge.
-
-Vending a view is simple:
-
-1. Create the ViewManager subclass.
-2. Implement the `createViewInstance` method
-3. Expose view property setters using `@ReactProp` (or `@ReactPropGroup`) annotation
-4. Register the manager in `createViewManagers` of the applications package.
-5. Implement the JavaScript module
-
-## 1. Create the `ViewManager` subclass
-
-In this example we create view manager class `ReactImageManager` that extends `SimpleViewManager` of type `ReactImageView`. `ReactImageView` is the type of object managed by the manager, this will be the custom native view. Name returned by `getName` is used to reference the native view type from JavaScript.
+In this example we create  class `Child` that extends `Parent`   Name returned by `getName` is used to  return Company Name.
 
 ```java
 ...
 
-public class ReactImageManager extends SimpleViewManager<ReactImageView> {
+public class Child extends Parent {
 
-  public static final String REACT_CLASS = "RCTImageView";
+  public static final String CMP_NAME = "VR";
 
   @Override
   public String getName() {
-    return REACT_CLASS;
+    return CMP_NAME;
   }
 ```
 
